@@ -83,3 +83,6 @@ Resources: <br>
 🖥️ Deepspeed & FSDP both work well for distributed training <br>
 ⚙️ Consider LoRA for quicker iterations with less compute <br>
 🤗 Use the SFTTrainer from Hugging Face TRL <br>
+
+![1715953853320](https://github.com/Ray4an/LLM-CrashCourse/assets/103644059/ab0aed76-0ad6-41be-be80-112c897e379c)
+
