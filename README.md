@@ -67,3 +67,19 @@ Resources: <br>
 📺 30m: RLHF intro (HugFac) https://lnkd.in/etsH53ri <br>
 📖 15m: RLHF guid (Lblerr) https://lnkd.in/e57dsuEp <br>
 📖 15m: LoRA (HugFac) https://lnkd.in/ervJK9C7 <br>
+
+
+---
+
+# 10 Supervised fine-tuning (SFT) tips when starting a new LLM project. Here are our default settings for GPUs (A100 and newer):
+
+3️⃣ Start with 3 epochs <br>
+📉 LR: 2e-5 with a cosine schedule & 0.1 warmup ratio <br>
+🔗 Apply Packing to combine samples up to a sequence length (2048) <br>
+📏 Try Global BS of 256/512 (e.g., BS=16 per device, grad_acc=2/4 on 8xH100s) <br>
+⚡ Use Flash Attention v2 with bf16 & tf32 (to speed up remaining fp32 calculations) <br>
+💾 Enable gradient checkpointing to save memory <br>
+🚀 Opt for “adamw_torch_fused” (10% speed up) or “adamw_torch” optimizer <br>
+🖥️ Deepspeed & FSDP both work well for distributed training <br>
+⚙️ Consider LoRA for quicker iterations with less compute <br>
+🤗 Use the SFTTrainer from Hugging Face TRL <br>
